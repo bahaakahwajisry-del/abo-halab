@@ -472,6 +472,131 @@ footer small{display:block;margin-top:48px;color:#9a9186;font-size:14px}
   100%{opacity:0;transform:translateY(-14px) scale(1.04)}
 }
 
+
+/* ===== PRO LAYER ===== */
+::selection{background:var(--red);color:#fff}
+html{scroll-behavior:smooth}
+a,button{transition:background .25s,color .25s,transform .25s,box-shadow .25s,border-color .25s}
+a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+#bar{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--red);transform:scaleX(0);transform-origin:0 50%;z-index:60}
+nav{padding:12px 5vw;transition:padding .3s,background .3s,box-shadow .3s}
+nav.scrolled{padding:8px 5vw;background:rgba(244,237,226,.94);box-shadow:0 8px 30px rgba(17,17,17,.08)}
+.nav-links{display:flex;gap:6px;list-style:none;padding:0}
+.nav-links a{display:block;padding:8px 14px;border-radius:99px;color:var(--ink);text-decoration:none;font-size:13px;font-weight:600;letter-spacing:.4px}
+.nav-links a:hover{background:rgba(17,17,17,.07)}
+.nav-links a.on{background:var(--ink);color:#fff}
+nav a.cta-btn:hover,.btn:hover{background:var(--red);transform:translateY(-2px)}
+.btn:hover{background:var(--ink)}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--ink);padding:16px 36px}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+.rail{position:fixed;inset-inline-end:2vw;top:50%;transform:translateY(-50%);z-index:30;display:flex;flex-direction:column;gap:14px;opacity:0;pointer-events:none;transition:opacity .4s}
+.rail.show{opacity:1;pointer-events:auto}
+.rail a{display:flex;align-items:center;justify-content:flex-end;gap:10px;text-decoration:none;color:#fff;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;mix-blend-mode:difference}
+.rail a span{opacity:0;transform:translateX(8px);transition:.3s}
+.rail a:hover span,.rail a.on span{opacity:1;transform:none}
+.rail a i{width:9px;height:9px;border-radius:50%;border:2px solid #fff;transition:.3s}
+.rail a.on i{background:#fff;transform:scale(1.4)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#f3b48a;margin-bottom:16px}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--red)}
+.eyebrow.dark{color:var(--ink)}
+@keyframes rise{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}
+.s1t,.s2t,.s3t{opacity:0}
+.sec.live .s1t,.sec.live .s2t,.sec.live .s3t{animation:rise .9s cubic-bezier(.22,1,.36,1) .1s both}
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:15vh 5vw 8vh;background:var(--cream);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 80% 20%,rgba(211,38,27,.1),transparent 70%),radial-gradient(ellipse 50% 40% at 10% 90%,rgba(17,17,17,.06),transparent 70%);pointer-events:none}
+.hero h1{font-family:var(--font-display);font-weight:400;font-size:min(23vw,46vh);line-height:.82;letter-spacing:.01em;color:var(--red);display:flex;flex-wrap:wrap;column-gap:.18em;margin:6px 0 26px}
+.hero h1 span{display:block;overflow:hidden;padding-top:.04em}
+.hero h1 span b{display:block;font-weight:400;transform:translateY(105%);animation:up 1.1s cubic-bezier(.22,1,.36,1) 1.2s forwards}
+.hero h1 span:nth-child(2) b{animation-delay:1.32s}
+@keyframes up{to{transform:none}}
+.hero .lead{max-width:46ch;font-size:clamp(16px,1.5vw,20px);line-height:1.6;color:var(--muted);margin-bottom:30px;opacity:0;animation:rise 1s ease 1.7s forwards}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;opacity:0;animation:rise 1s ease 1.85s forwards}
+.badge{position:absolute;inset-inline-end:6vw;top:22vh;width:min(20vw,190px);min-width:120px;animation:spin 22s linear infinite}
+.badge text{font-family:var(--font-body);font-weight:700;font-size:14px;letter-spacing:3px;fill:var(--ink)}
+.badge-c{position:absolute;inset-inline-end:calc(6vw + min(10vw,95px));top:calc(22vh + min(10vw,95px));transform:translate(50%,-50%);font:34px var(--font-display);color:var(--red)}
+[dir=rtl] .badge-c{transform:translate(-50%,-50%)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-stats{display:flex;flex-wrap:wrap;gap:0;margin-top:9vh;border-top:2px solid var(--ink)}
+.hero-stats div{flex:1 1 180px;padding:18px 0 0}
+.hero-stats strong{display:block;font:44px/1 var(--font-display);letter-spacing:1px}
+.hero-stats span{font-size:13px;color:var(--muted);font-weight:500}
+.marquee{background:var(--red);color:#fff;overflow:hidden;white-space:nowrap;padding:16px 0;border-block:2px solid var(--ink)}
+.marquee .tr{display:inline-flex;animation:mq 28s linear infinite}
+.marquee span{font:30px var(--font-display);letter-spacing:2px;padding-inline:26px}
+.marquee span::after{content:"✦";margin-inline-start:52px;opacity:.7}
+@keyframes mq{to{transform:translateX(-50%)}}
+.menu2{padding:16vh 5vw 14vh;background:var(--cream)}
+.menu2 .mh{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:6vh}
+.menu2 h2{font:clamp(56px,9vw,130px)/.9 var(--font-display);color:var(--red);letter-spacing:1px}
+.menu2 .mh p{max-width:36ch;color:var(--muted);line-height:1.6}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{display:flex;flex-direction:column;background:#fff;border:1px solid rgba(17,17,17,.08);border-radius:26px;padding:28px;min-height:360px;text-decoration:none;color:var(--ink)}
+.card:hover{background:var(--ink);color:#fff;transform:translateY(-8px);box-shadow:0 30px 50px rgba(17,17,17,.2)}
+.card .n{font:60px/1 var(--font-display);color:var(--red)}
+.card h3{font:36px/1 var(--font-display);letter-spacing:.8px;margin:auto 0 12px;border:0;padding:0}
+.card p{line-height:1.65;color:var(--muted);font-size:15px;max-width:none}
+.card:hover p{color:#d9cdbd}
+.card .tg{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0}
+.card .tg i{font-style:normal;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:5px 10px;border-radius:99px;background:rgba(17,17,17,.07)}
+.card:hover .tg i{background:rgba(255,255,255,.12)}
+.card .go{font-weight:700;font-size:14px;letter-spacing:.5px;display:flex;justify-content:space-between}
+footer.pf{padding:12vh 5vw 4vh;position:relative;overflow:hidden}
+.pf .grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;padding-bottom:6vh;border-bottom:1px solid rgba(255,255,255,.14)}
+.pf h4{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#9a9186;margin-bottom:16px}
+.pf ul{list-style:none;padding:0;display:grid;gap:10px}
+.pf li a{color:#fff;text-decoration:none;font-weight:500}.pf li a:hover{color:var(--red)}
+.pf h2{margin-bottom:24px}
+.pf .wm{font:min(24vw,40vh)/.8 var(--font-display);color:rgba(255,255,255,.06);white-space:nowrap;margin:5vh 0 -2vh;user-select:none}
+.pf .bt{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:#9a9186;font-size:13px;margin-top:3vh}
+@media(max-width:900px){.nav-links{display:none}.rail a span{display:none}.pf .grid{grid-template-columns:1fr}.badge,.badge-c{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-delay:0s!important;scroll-behavior:auto!important}.hero h1 span b{transform:none}.s1t,.s2t,.s3t,.hero .lead,.hero-cta{opacity:1}}
+
+/* ===== FIRE + HOURS + BACKGROUNDS ===== */
+body::after{content:"";position:fixed;inset:0;z-index:15;pointer-events:none;opacity:.07;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .5 0 0 0 0 .45 0 0 0 0 .4 0 0 0 .9 0'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>")}
+.hero{background:radial-gradient(ellipse 90% 55% at 50% 108%,#8a2a0a 0%,#3a1408 38%,#150805 72%,#0b0503 100%);color:#fff}
+.hero::before{background:radial-gradient(ellipse 50% 40% at 82% 18%,rgba(255,120,40,.16),transparent 70%),radial-gradient(ellipse 40% 30% at 12% 30%,rgba(211,38,27,.14),transparent 70%)}
+#fire{position:absolute;left:0;bottom:0;width:100%;height:68%;z-index:1;pointer-events:none;mix-blend-mode:screen}
+.hero>.eyebrow,.hero>h1,.hero>.lead,.hero>.hero-cta,.hero>.hero-stats{position:relative;z-index:2}
+.badge,.badge-c{z-index:2}
+.hero .eyebrow.dark{color:#f3c9a0}
+.hero h1 b{background:linear-gradient(180deg,#FFF1C4 0%,#FFB347 38%,#FF5A1F 72%,#D3261B 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 6px 30px rgba(255,90,20,.35))}
+.hero .lead{color:#e8d5c2}
+.hero .btn.ghost{color:#fff;border-color:rgba(255,255,255,.7)}
+.hero .btn.ghost:hover{background:#fff;color:var(--ink)}
+.hero .btn:not(.ghost):hover{background:#fff;color:var(--red)}
+.badge text{fill:#fff}.badge-c{color:#FFB04A}
+.hero-stats{border-top-color:rgba(255,255,255,.3);background:linear-gradient(180deg,transparent,rgba(10,4,2,.6));padding-bottom:6px}
+.hero-stats strong{color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.6)}.hero-stats span{color:#e0cbb6}
+.hero-cta{align-items:center}
+.chip{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);color:#fff;padding:12px 20px;border-radius:99px;font-weight:600;font-size:14px;backdrop-filter:blur(8px)}
+.chip i{width:10px;height:10px;border-radius:50%;background:#9a9186}
+.chip.open i{background:#3DDC84;box-shadow:0 0 0 0 rgba(61,220,132,.7);animation:pulse 1.8s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(61,220,132,0)}100%{box-shadow:0 0 0 0 rgba(61,220,132,0)}}
+#s1 .pin{background:radial-gradient(ellipse 70% 30% at 50% 108%,rgba(255,106,26,.3),transparent 70%),radial-gradient(ellipse 60% 55% at 32% 48%,#4d2312 0%,#241008 55%,#120804 100%)}
+#s2 .pin{background:radial-gradient(ellipse 70% 30% at 50% 108%,rgba(255,106,26,.26),transparent 70%),radial-gradient(ellipse 65% 50% at 50% 34%,#40200f 0%,#1f0e06 58%,#0f0703 100%)}
+#s3 .pin{background:radial-gradient(ellipse 70% 30% at 50% 108%,rgba(255,106,26,.24),transparent 70%),radial-gradient(ellipse 62% 52% at 48% 42%,#33241a 0%,#19110c 60%,#0c0805 100%)}
+.menu2{background:radial-gradient(ellipse 55% 40% at 90% 0%,rgba(211,38,27,.1),transparent 70%),radial-gradient(ellipse 50% 40% at 0% 100%,rgba(255,140,40,.14),transparent 70%),var(--cream)}
+.hours{background:var(--red);color:#fff;padding:14vh 5vw;position:relative;overflow:hidden;border-top:2px solid var(--ink)}
+.hours::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 100% 100%,rgba(0,0,0,.28),transparent 70%),repeating-linear-gradient(135deg,rgba(255,255,255,.04) 0 2px,transparent 2px 22px)}
+.hours .hw{position:relative}
+.hours .eyebrow{color:#fff}.hours .eyebrow::before{background:#fff}
+.hours h2{font:clamp(64px,15vw,230px)/.85 var(--font-display);letter-spacing:1px;margin:6px 0 24px}
+.hours h2 em{font-style:normal;opacity:.55;margin-inline:.1em}
+.hours .hl{max-width:46ch;font-size:clamp(16px,1.5vw,20px);line-height:1.6;margin-bottom:30px;color:#ffe9e4}
+.hrow{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.hours .chip{background:#fff;color:var(--ink);border-color:#fff}
+.hours .btn{background:var(--ink)}.hours .btn:hover{background:#fff;color:var(--red)}
+.pf .grid{grid-template-columns:2fr 1fr 1fr 1fr}
+@media(max-width:900px){.pf .grid{grid-template-columns:1fr}#fire{height:55%}}
+
+/* ===== FIXES ===== */
+.hero{padding-top:13vh;padding-bottom:5vh}
+.hero h1{font-size:min(17vw,30vh);flex-wrap:nowrap;margin:4px 0 18px}
+.hero h1 b{filter:none!important}
+.hero-stats{margin-top:5vh}
+#fire{height:78%}
+.s1t,.s2t,.s3t{padding:22px 26px;border-radius:22px;background:linear-gradient(135deg,rgba(14,6,3,.78),rgba(14,6,3,.5));border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 18px 50px rgba(0,0,0,.35)}
+.badge{top:auto;bottom:27vh}.badge-c{top:auto;bottom:calc(27vh + min(10vw,95px));transform:translate(50%,50%)}[dir=rtl] .badge-c{transform:translate(-50%,50%)}
 </style>
 </head>
 <body>
@@ -485,16 +610,34 @@ footer small{display:block;margin-top:48px;color:#9a9186;font-size:14px}
   <div class="intro-brand">ABU HALAB</div>
 </div>
 
-<nav>
+<div id="bar"></div>
+<nav id="nav">
   <div class="nav-brand">
     <b>ABU HALAB</b>
-    <a class="hotline-badge" href="tel:17904" aria-label="Hotline 17904">
-      <span class="hotline-sub">Hotline</span>
-      <span>17904</span>
-    </a>
+    <a class="hotline-badge" href="tel:17904" aria-label="Hotline 17904"><span class="hotline-sub">Hotline</span><span>17904</span></a>
   </div>
+  <ul class="nav-links">
+    <li><a href="#s1" data-t="s1">Shawarma</a></li><li><a href="#s2" data-t="s2">Rotisserie</a></li>
+    <li><a href="#s3" data-t="s3">Broasted</a></li><li><a href="#s4" data-t="s4">Burger</a></li><li><a href="#menu" data-t="menu">Menu</a></li>
+  </ul>
   <a class="cta-btn" href="#order">Order Now</a>
 </nav>
+<aside class="rail" id="rail" aria-label="Chapters">
+  <a href="#s1" data-t="s1"><span>01 Shawarma</span><i></i></a><a href="#s2" data-t="s2"><span>02 Rotisserie</span><i></i></a>
+  <a href="#s3" data-t="s3"><span>03 Broasted</span><i></i></a><a href="#s4" data-t="s4"><span>04 Burger</span><i></i></a>
+</aside>
+
+<header class="hero" id="top">
+  <canvas id="fire" aria-hidden="true"></canvas>
+  <p class="eyebrow dark">Shawarma · Rotisserie · Broasted · Burger</p>
+  <h1 aria-label="Abu Halab"><span><b>ABU</b></span><span><b>HALAB</b></span></h1>
+  <p class="lead">Flame-roasted, pressure-fried and made to order. Scroll to watch every signature dish come to life.</p>
+  <div class="hero-cta"><a class="btn" href="#s1">Start the tour</a><a class="btn ghost" href="#menu">See the menu</a><span class="chip" data-open><i></i><b>Checking hours…</b></span></div>
+  <svg class="badge" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="circ" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs><text><textPath href="#circ">HOTLINE 17904 • ORDER NOW • HOTLINE 17904 • ORDER NOW •</textPath></text></svg>
+  <div class="badge-c" aria-hidden="true">17904</div>
+  <div class="hero-stats"><div><strong>04</strong><span>Signature dishes</span></div><div><strong>17904</strong><span>Order hotline</span></div><div><strong>8AM–3AM</strong><span>Opening hours</span></div></div>
+</header>
+<div class="marquee" aria-hidden="true"><div class="tr"><span>SHAWARMA</span><span>ROTISSERIE</span><span>BROASTED</span><span>BURGER</span><span>HOTLINE 17904</span><span>SHAWARMA</span><span>ROTISSERIE</span><span>BROASTED</span><span>BURGER</span><span>HOTLINE 17904</span><span>SHAWARMA</span><span>ROTISSERIE</span><span>BROASTED</span><span>BURGER</span><span>HOTLINE 17904</span><span>SHAWARMA</span><span>ROTISSERIE</span><span>BROASTED</span><span>BURGER</span><span>HOTLINE 17904</span></div></div>
 
 <!-- SECTION 1: SHAWARMA -->
 <section class="sec" id="s1">
@@ -662,23 +805,38 @@ footer small{display:block;margin-top:48px;color:#9a9186;font-size:14px}
     <filter id="steamSoft" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur stdDeviation="14" />
     </filter>
-    <g id="wholeTrussedChicken">
-      <!-- Plump trussed body with realistic breast taper & hip curve -->
-      <path d="M-66 -8 C-62 -36 -26 -46 12 -42 C46 -38 70 -20 72 2 C74 24 52 40 16 40 C-18 40 -42 32 -58 22 C-68 15 -68 2 -66 -8 Z" fill="url(#chickSkin)" stroke="#4A1403" stroke-width="1.8"/>
-      <path d="M-66 -8 C-62 -36 -26 -46 12 -42 C46 -38 70 -20 72 2 C74 24 52 40 16 40 C-18 40 -42 32 -58 22 C-68 15 -68 2 -66 -8 Z" fill="url(#chickHighlight)"/>
-      <!-- Tucked folded wing -->
-      <path d="M-24 -28 C-2 -34 22 -24 26 -8 C16 2 -12 2 -28 -12 C-32 -17 -30 -25 -24 -28 Z" fill="#C43B08" stroke="#5E1904" stroke-width="1.4"/>
-      <!-- Plump lower thigh & tucked drumstick -->
-      <path d="M12 6 C36 2 62 12 64 28 C48 38 22 36 10 22 C6 16 6 9 12 6 Z" fill="#D4440A" stroke="#5E1904" stroke-width="1.4"/>
-      <path d="M46 22 L72 28 C76 30 75 36 70 36 L44 31 Z" fill="#B83506" stroke="#4A1403" stroke-width="1.3"/>
-      <circle cx="74" cy="32" r="4.2" fill="#F8FAFC"/>
-      <!-- Charred spice & herb crust flecks like the photo -->
-      <path d="M-36 -18 Q-12 -24 14 -16 M-28 -4 Q0 -10 28 -2 M-18 14 Q10 10 34 16" stroke="#3D0F02" stroke-width="2.4" stroke-linecap="round" fill="none" opacity="0.6"/>
-      <circle cx="-18" cy="-14" r="3.5" fill="#4A1202" opacity="0.55"/>
-      <circle cx="8" cy="-22" r="2.8" fill="#3D0E02" opacity="0.5"/>
-      <circle cx="24" cy="-6" r="4" fill="#4A1202" opacity="0.5"/>
-      <circle cx="-6" cy="8" r="3.2" fill="#3D0E02" opacity="0.45"/>
-    </g>
+    <radialGradient id="ckBody" cx="36%" cy="26%" r="85%"><stop offset="0" stop-color="#F9BC55"/><stop offset=".3" stop-color="#E07F22"/><stop offset=".7" stop-color="#A8420C"/><stop offset="1" stop-color="#3F1202"/></radialGradient>
+<linearGradient id="ckLeg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EC9532"/><stop offset=".55" stop-color="#B34C0E"/><stop offset="1" stop-color="#561803"/></linearGradient>
+<radialGradient id="ckSpec" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFF4D6" stop-opacity=".95"/><stop offset="1" stop-color="#FFF4D6" stop-opacity="0"/></radialGradient>
+<linearGradient id="ckShade" x1="0" y1="0" x2="0" y2="1"><stop offset=".55" stop-color="#1E0600" stop-opacity="0"/><stop offset="1" stop-color="#1E0600" stop-opacity=".6"/></linearGradient>
+<radialGradient id="ckBone" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#FFFBEF"/><stop offset="1" stop-color="#D9C79F"/></radialGradient>
+<pattern id="ckPores" width="9" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.1" fill="#3F1202" opacity=".3"/><circle cx="6.5" cy="5.5" r="1.5" fill="#FBD07A" opacity=".3"/><circle cx="7" cy="1.5" r=".8" fill="#3F1202" opacity=".4"/><circle cx="2.5" cy="6" r=".9" fill="#FFE5A8" opacity=".4"/></pattern>
+<g id="wholeTrussedChicken">
+ <ellipse cx="2" cy="44" rx="62" ry="5" fill="#000" opacity=".28"/>
+ <path d="M-66 -8 C-62 -36 -26 -46 12 -42 C46 -38 70 -20 72 2 C74 24 52 40 16 40 C-18 40 -42 32 -58 22 C-68 15 -68 2 -66 -8 Z" fill="url(#ckBody)" stroke="#3A1002" stroke-width="1.6"/>
+ <path d="M-66 -8 C-62 -36 -26 -46 12 -42 C46 -38 70 -20 72 2 C74 24 52 40 16 40 C-18 40 -42 32 -58 22 C-68 15 -68 2 -66 -8 Z" fill="url(#ckPores)"/>
+ <path d="M-66 -8 C-62 -36 -26 -46 12 -42 C46 -38 70 -20 72 2 C74 24 52 40 16 40 C-18 40 -42 32 -58 22 C-68 15 -68 2 -66 -8 Z" fill="url(#ckShade)"/>
+ <path d="M-50 -22 C-30 -34 10 -36 40 -24" fill="none" stroke="#3F1202" stroke-width="1.6" opacity=".35" stroke-linecap="round"/>
+ <path d="M-58 4 C-34 14 10 18 52 8" fill="none" stroke="#3F1202" stroke-width="1.4" opacity=".3" stroke-linecap="round"/>
+ <path d="M-24 -28 C-2 -34 22 -24 26 -8 C16 2 -12 2 -28 -12 C-32 -17 -30 -25 -24 -28 Z" fill="url(#ckLeg)" stroke="#4E1503" stroke-width="1.3"/>
+ <path d="M-24 -28 C-2 -34 22 -24 26 -8 C16 2 -12 2 -28 -12 C-32 -17 -30 -25 -24 -28 Z" fill="url(#ckPores)"/>
+ <path d="M-26 -14 C-14 -4 6 -2 22 -8" fill="none" stroke="#2A0A01" stroke-width="2.4" stroke-linecap="round" opacity=".55"/>
+ <path d="M12 6 C36 2 62 12 64 28 C48 38 22 36 10 22 C6 16 6 9 12 6 Z" fill="url(#ckLeg)" stroke="#4E1503" stroke-width="1.3"/>
+ <path d="M12 6 C36 2 62 12 64 28 C48 38 22 36 10 22 C6 16 6 9 12 6 Z" fill="url(#ckPores)"/>
+ <path d="M46 22 L72 28 C76 30 75 36 70 36 L44 31 Z" fill="url(#ckLeg)" stroke="#3A1002" stroke-width="1.3"/>
+ <circle cx="74.5" cy="30" r="5" fill="url(#ckBone)" stroke="#BBA67C" stroke-width="1"/><circle cx="78" cy="27.5" r="3.4" fill="url(#ckBone)" stroke="#BBA67C" stroke-width=".8"/>
+ <path d="M-42 -34 C-36 -12 -36 14 -42 34" fill="none" stroke="#2E1203" stroke-width="3.2" opacity=".35" stroke-linecap="round"/>
+ <path d="M-42 -35 C-36 -13 -36 13 -42 33" fill="none" stroke="#EADBB6" stroke-width="2" stroke-linecap="round"/>
+ <path d="M18 -42 C26 -16 26 12 18 40" fill="none" stroke="#2E1203" stroke-width="3.2" opacity=".35" stroke-linecap="round"/>
+ <path d="M18 -43 C25 -17 25 11 17 39" fill="none" stroke="#EADBB6" stroke-width="2" stroke-linecap="round"/>
+ <path d="M-36 -18 Q-12 -24 14 -16 M-28 -4 Q0 -10 28 -2" stroke="#2E0B01" stroke-width="2.2" stroke-linecap="round" fill="none" opacity=".5"/>
+ <g fill="#B3260A" opacity=".75"><circle cx="-50" cy="-6" r="1.6"/><circle cx="-8" cy="-30" r="1.5"/><circle cx="34" cy="-14" r="1.7"/><circle cx="-20" cy="22" r="1.5"/><circle cx="48" cy="10" r="1.4"/></g>
+ <g fill="#5E7A2A" opacity=".75"><ellipse cx="-30" cy="-26" rx="2.6" ry="1.1" transform="rotate(30 -30 -26)"/><ellipse cx="4" cy="-34" rx="2.6" ry="1.1" transform="rotate(-20 4 -34)"/><ellipse cx="38" cy="-4" rx="2.6" ry="1.1" transform="rotate(50 38 -4)"/><ellipse cx="-12" cy="14" rx="2.6" ry="1.1"/></g>
+ <ellipse cx="-28" cy="-28" rx="24" ry="7" fill="url(#ckSpec)" transform="rotate(-14 -28 -28)"/>
+ <ellipse cx="36" cy="-24" rx="14" ry="4.5" fill="url(#ckSpec)" transform="rotate(14 36 -24)" opacity=".8"/>
+ <ellipse cx="34" cy="14" rx="12" ry="3.6" fill="url(#ckSpec)" opacity=".55"/>
+ <path d="M-52 34 q0 7 3 7 q3 0 3 -7 q-3 -3 -6 0Z" fill="#FFC866" opacity=".7"/>
+</g>
    </defs>
 
    <!-- Stainless Steel Commercial Rotisserie Oven Cabinet (inspired by photo 1) -->
@@ -823,7 +981,10 @@ footer small{display:block;margin-top:48px;color:#9a9186;font-size:14px}
       <stop offset="50%" stop-color="#F8FAFC"/>
       <stop offset="100%" stop-color="#94A3B8"/>
     </linearGradient>
-    <radialGradient id="broastCrust" cx="38%" cy="30%" r="68%">
+    <pattern id="crustTex" width="16" height="14" patternUnits="userSpaceOnUse"><path d="M1 4 Q5 1 9 4 M8 11 Q12 8 15 11 M-1 12 Q2 9 5 12" stroke="#4A1A02" stroke-width="1.3" fill="none" opacity=".5" stroke-linecap="round"/><circle cx="12" cy="3" r="1.8" fill="#FFD27A" opacity=".55"/><circle cx="4" cy="8" r="1.4" fill="#FFE0A0" opacity=".5"/><circle cx="10" cy="8" r="1" fill="#4A1A02" opacity=".4"/></pattern>
+<radialGradient id="crustShade" cx=".35" cy=".28" r=".8"><stop offset="0" stop-color="#FFE7A8" stop-opacity=".45"/><stop offset=".5" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#220700" stop-opacity=".55"/></radialGradient>
+<radialGradient id="crustSpec" cx=".3" cy=".22" r=".35"><stop offset="0" stop-color="#FFF6DA" stop-opacity=".75"/><stop offset="1" stop-color="#FFF6DA" stop-opacity="0"/></radialGradient>
+<radialGradient id="broastCrust" cx="38%" cy="30%" r="68%">
       <stop offset="0%" stop-color="#FDBA4D"/>
       <stop offset="48%" stop-color="#D97218"/>
       <stop offset="85%" stop-color="#9A4108"/>
@@ -931,25 +1092,25 @@ footer small{display:block;margin-top:48px;color:#9a9186;font-size:14px}
 
    <!-- 1. Crispy Flaky Broasted Wing (ruffled serrated batter edges) -->
    <g id="bWing" opacity="0">
-     <path d="M-28 8 L-23 1 L-26 -5 L-17 -11 L-12 -18 L-3 -16 L5 -21 L13 -14 L23 -12 L27 -4 L21 3 L24 9 L13 12 L4 16 L-6 12 L-16 15 L-23 10 Z" fill="url(#broastCrust)" stroke="#6E2B06" stroke-width="1.5" stroke-linejoin="round"/>
+     <path d="M-28 8 L-23 1 L-26 -5 L-17 -11 L-12 -18 L-3 -16 L5 -21 L13 -14 L23 -12 L27 -4 L21 3 L24 9 L13 12 L4 16 L-6 12 L-16 15 L-23 10 Z" fill="url(#broastCrust)" stroke="#6E2B06" stroke-width="1.5" stroke-linejoin="round"/><path d="M-28 8 L-23 1 L-26 -5 L-17 -11 L-12 -18 L-3 -16 L5 -21 L13 -14 L23 -12 L27 -4 L21 3 L24 9 L13 12 L4 16 L-6 12 L-16 15 L-23 10 Z" fill="url(#crustTex)"/><path d="M-28 8 L-23 1 L-26 -5 L-17 -11 L-12 -18 L-3 -16 L5 -21 L13 -14 L23 -12 L27 -4 L21 3 L24 9 L13 12 L4 16 L-6 12 L-16 15 L-23 10 Z" fill="url(#crustShade)"/><path d="M-28 8 L-23 1 L-26 -5 L-17 -11 L-12 -18 L-3 -16 L5 -21 L13 -14 L23 -12 L27 -4 L21 3 L24 9 L13 12 L4 16 L-6 12 L-16 15 L-23 10 Z" fill="url(#crustSpec)"/>
      <use href="#crispyFlakes" transform="scale(0.85)"/>
    </g>
 
    <!-- 2. Large Crispy Golden Broasted Breast (crunchy cornflake-style batter ridges) -->
    <g id="bBreast" opacity="0">
-     <path d="M-38 -2 L-34 -11 L-26 -16 L-17 -22 L-6 -20 L5 -24 L16 -19 L27 -16 L35 -8 L39 1 L34 10 L26 17 L15 21 L3 19 L-9 22 L-21 18 L-32 13 L-36 5 Z" fill="url(#broastCrust)" stroke="#6E2B06" stroke-width="1.6" stroke-linejoin="round"/>
+     <path d="M-38 -2 L-34 -11 L-26 -16 L-17 -22 L-6 -20 L5 -24 L16 -19 L27 -16 L35 -8 L39 1 L34 10 L26 17 L15 21 L3 19 L-9 22 L-21 18 L-32 13 L-36 5 Z" fill="url(#broastCrust)" stroke="#6E2B06" stroke-width="1.6" stroke-linejoin="round"/><path d="M-38 -2 L-34 -11 L-26 -16 L-17 -22 L-6 -20 L5 -24 L16 -19 L27 -16 L35 -8 L39 1 L34 10 L26 17 L15 21 L3 19 L-9 22 L-21 18 L-32 13 L-36 5 Z" fill="url(#crustTex)"/><path d="M-38 -2 L-34 -11 L-26 -16 L-17 -22 L-6 -20 L5 -24 L16 -19 L27 -16 L35 -8 L39 1 L34 10 L26 17 L15 21 L3 19 L-9 22 L-21 18 L-32 13 L-36 5 Z" fill="url(#crustShade)"/><path d="M-38 -2 L-34 -11 L-26 -16 L-17 -22 L-6 -20 L5 -24 L16 -19 L27 -16 L35 -8 L39 1 L34 10 L26 17 L15 21 L3 19 L-9 22 L-21 18 L-32 13 L-36 5 Z" fill="url(#crustSpec)"/>
      <use href="#crispyFlakes" transform="scale(1.15)"/>
    </g>
 
    <!-- 3. Crispy Crunchy Broasted Thigh -->
    <g id="bThigh" opacity="0">
-     <path d="M-31 0 L-27 -10 L-19 -16 L-9 -19 L2 -17 L13 -20 L23 -14 L30 -6 L32 4 L26 13 L16 18 L4 17 L-8 19 L-20 15 L-28 8 Z" fill="url(#broastCrust)" stroke="#6E2B06" stroke-width="1.5" stroke-linejoin="round"/>
+     <path d="M-31 0 L-27 -10 L-19 -16 L-9 -19 L2 -17 L13 -20 L23 -14 L30 -6 L32 4 L26 13 L16 18 L4 17 L-8 19 L-20 15 L-28 8 Z" fill="url(#broastCrust)" stroke="#6E2B06" stroke-width="1.5" stroke-linejoin="round"/><path d="M-31 0 L-27 -10 L-19 -16 L-9 -19 L2 -17 L13 -20 L23 -14 L30 -6 L32 4 L26 13 L16 18 L4 17 L-8 19 L-20 15 L-28 8 Z" fill="url(#crustTex)"/><path d="M-31 0 L-27 -10 L-19 -16 L-9 -19 L2 -17 L13 -20 L23 -14 L30 -6 L32 4 L26 13 L16 18 L4 17 L-8 19 L-20 15 L-28 8 Z" fill="url(#crustShade)"/><path d="M-31 0 L-27 -10 L-19 -16 L-9 -19 L2 -17 L13 -20 L23 -14 L30 -6 L32 4 L26 13 L16 18 L4 17 L-8 19 L-20 15 L-28 8 Z" fill="url(#crustSpec)"/>
      <use href="#crispyFlakes" transform="rotate(14)"/>
    </g>
 
    <!-- 4. Crispy Golden Broasted Drumstick (matching prominent front drumstick in photo) -->
    <g id="bDrumstick" opacity="0">
-     <path d="M-26 -2 L-22 -11 L-13 -16 L-2 -15 L9 -17 L18 -11 L23 -4 L34 -4 L37 0 L34 4 L23 4 L18 11 L9 17 L-2 15 L-13 16 L-22 11 Z" fill="url(#broastCrust)" stroke="#6E2B06" stroke-width="1.5" stroke-linejoin="round"/>
+     <path d="M-26 -2 L-22 -11 L-13 -16 L-2 -15 L9 -17 L18 -11 L23 -4 L34 -4 L37 0 L34 4 L23 4 L18 11 L9 17 L-2 15 L-13 16 L-22 11 Z" fill="url(#broastCrust)" stroke="#6E2B06" stroke-width="1.5" stroke-linejoin="round"/><path d="M-26 -2 L-22 -11 L-13 -16 L-2 -15 L9 -17 L18 -11 L23 -4 L34 -4 L37 0 L34 4 L23 4 L18 11 L9 17 L-2 15 L-13 16 L-22 11 Z" fill="url(#crustTex)"/><path d="M-26 -2 L-22 -11 L-13 -16 L-2 -15 L9 -17 L18 -11 L23 -4 L34 -4 L37 0 L34 4 L23 4 L18 11 L9 17 L-2 15 L-13 16 L-22 11 Z" fill="url(#crustShade)"/><path d="M-26 -2 L-22 -11 L-13 -16 L-2 -15 L9 -17 L18 -11 L23 -4 L34 -4 L37 0 L34 4 L23 4 L18 11 L9 17 L-2 15 L-13 16 L-22 11 Z" fill="url(#crustSpec)"/>
      <circle cx="35" cy="-2" r="3.5" fill="#F8FAFC"/>
      <circle cx="35" cy="2" r="3.5" fill="#F8FAFC"/>
      <use href="#crispyFlakes" transform="translate(-4, 0) scale(0.8)"/>
@@ -1035,24 +1196,28 @@ footer small{display:block;margin-top:48px;color:#9a9186;font-size:14px}
  </div>
 </section>
 
-<section class="menu" id="menu">
- <h2>THE MENU</h2>
- <div><h3>CHICKEN SHAWARMA</h3><p>Garlic toum spread first, flame-roasted chicken shaved fresh off the spit, and wrapped warm.</p></div>
- <div><h3>ROTISSERIE CHICKEN</h3><p>Whole flame-grilled chicken carved fresh to order with pickles, carrots, cucumber, toum, and fries.</p></div>
- <div><h3>BROASTED CHICKEN</h3><p>Pressure-fried golden wing, breast, thigh, and drumstick served in an Abu Halab bucket with fries.</p></div>
- <div><h3>ABU HALAB BURGER</h3><p>Crispy fried chicken fillet stacked with fresh lettuce, round tomatoes, pickles, and Russian salad.</p></div>
-</section>
+<section class="menu2" id="menu"><div class="mh"><h2>THE MENU</h2><p>Four signatures, each cooked the way it should be. Tap a card to replay how it is made.</p></div><div class="cards"><a class="card" href="#s1"><span class="n">01</span><h3>CHICKEN SHAWARMA</h3><p>Garlic toum spread first, flame-roasted chicken shaved fresh off the spit, and wrapped warm.</p><div class="tg"><i>Toum</i><i>Spit-roasted</i></div><span class="go"><span>Watch it made</span><span>→</span></span></a><a class="card" href="#s2"><span class="n">02</span><h3>ROTISSERIE CHICKEN</h3><p>Whole flame-grilled chicken carved fresh to order with pickles, carrots, cucumber, toum, and fries.</p><div class="tg"><i>Flame-grilled</i><i>With sides</i></div><span class="go"><span>Watch it made</span><span>→</span></span></a><a class="card" href="#s3"><span class="n">03</span><h3>BROASTED CHICKEN</h3><p>Pressure-fried golden wing, breast, thigh, and drumstick served in an Abu Halab bucket with fries.</p><div class="tg"><i>Pressure-fried</i><i>Bucket</i></div><span class="go"><span>Watch it made</span><span>→</span></span></a><a class="card" href="#s4"><span class="n">04</span><h3>ABU HALAB BURGER</h3><p>Crispy fried chicken fillet stacked with fresh lettuce, round tomatoes, pickles, and Russian salad.</p><div class="tg"><i>Crispy</i><i>Signature</i></div><span class="go"><span>Watch it made</span><span>→</span></span></a></div></section>
 
-<footer id="order">
-  <h2>HUNGRY?</h2>
-  <div class="hotline-row">
-    <a class="hotline-big" href="tel:17904">
-      <span class="label">Hotline</span>
-      <span>17904</span>
-    </a>
-    <a class="btn" href="https://wa.me/201114052287?text=Hello%20ABU%20HALAB%2C%20I%20would%20like%20to%20place%20an%20order%20(Hotline%3A%2017904)" target="_blank" rel="noopener noreferrer" id="wa">Order via WhatsApp</a>
+<section class="hours" id="hours"><div class="hw">
+ <p class="eyebrow">Opening hours</p>
+ <h2>8:00 AM <em>—</em> 3:00 AM</h2>
+ <p class="hl">From the first morning order to the late-night craving, the grill is lit and the kitchen is ready.</p>
+ <div class="hrow"><span class="chip" data-open><i></i><b>Checking hours…</b></span><a class="btn" href="tel:17904">Call 17904</a></div>
+</div></section>
+
+<footer class="pf" id="order">
+  <div class="grid">
+    <div><h2>HUNGRY?</h2>
+      <div class="hotline-row">
+        <a class="hotline-big" href="tel:17904"><span class="label">Hotline</span><span>17904</span></a>
+        <a class="btn" href="https://wa.me/201114052287?text=Hello%20ABU%20HALAB%2C%20I%20would%20like%20to%20place%20an%20order%20(Hotline%3A%2017904)" target="_blank" rel="noopener noreferrer" id="wa">Order via WhatsApp</a>
+      </div></div>
+    <div><h4>Menu</h4><ul><li><a href="#s1">Chicken Shawarma</a></li><li><a href="#s2">Rotisserie Chicken</a></li><li><a href="#s3">Broasted Chicken</a></li><li><a href="#s4">Abu Halab Burger</a></li></ul></div>
+    <div><h4>Hours</h4><ul><li><a href="#hours">8:00 AM – 3:00 AM</a></li></ul></div>
+    <div><h4>Order</h4><ul><li><a href="tel:17904">Call 17904</a></li><li><a href="#top">Back to top ↑</a></li></ul></div>
   </div>
-  <small>© 2026 ABU HALAB Restaurant • Hotline: 17904</small>
+  <div class="wm" aria-hidden="true">ABU HALAB</div>
+  <div class="bt"><span>© 2026 ABU HALAB Restaurant</span><span>Hotline: 17904</span></div>
 </footer>
 
 <script>
@@ -1407,6 +1572,64 @@ footer small{display:block;margin-top:48px;color:#9a9186;font-size:14px}
   }
 
   requestAnimationFrame(tick);
+})();
+</script>
+<script>
+(function(){
+ const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+ [['.s1t','01 / 04 — Shawarma'],['.s2t','02 / 04 — Rotisserie'],['.s3t','03 / 04 — Broasted'],['#tag','04 / 04 — Burger']].forEach(([q,t])=>{const e=$(q);if(e)e.insertAdjacentHTML('afterbegin','<span class="eyebrow">'+t+'</span>')});
+ const ids=['s1','s2','s3','s4','menu'],bar=$('#bar'),nav=$('#nav'),rail=$('#rail'),hero=$('#top');
+ const links=$$('[data-t]');let tick=false;
+ function upd(){
+  tick=false;const y=scrollY,max=document.documentElement.scrollHeight-innerHeight;
+  bar.style.transform='scaleX('+(max>0?y/max:0)+')';
+  nav.classList.toggle('scrolled',y>40);
+  const vh=innerHeight;let cur=null;
+  ids.forEach(id=>{const e=document.getElementById(id);if(e&&e.getBoundingClientRect().top<=vh*.5)cur=id});
+  links.forEach(a=>a.classList.toggle('on',a.dataset.t===cur));
+  const inS=$('#s1').getBoundingClientRect().top<=vh*.5&&$('#menu').getBoundingClientRect().top>vh*.5;
+  rail.classList.toggle('show',inS);
+  $$('.sec').forEach(s=>{const r=s.getBoundingClientRect();s.classList.toggle('live',r.top<vh*.6&&r.bottom>0)});
+ }
+ addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});
+ addEventListener('resize',upd);upd();
+})();
+</script>
+<script>
+(function(){
+ /* open / closed chip: 8:00 AM to 3:00 AM, Cairo time */
+ function hrs(){let h;try{h=parseInt(new Intl.DateTimeFormat('en-GB',{hour:'numeric',hour12:false,timeZone:'Africa/Cairo'}).format(new Date()),10)}catch(e){h=new Date().getHours()}
+  const open=h>=8||h<3;
+  document.querySelectorAll('[data-open]').forEach(c=>{c.classList.toggle('open',open);c.querySelector('b').textContent=open?'Open now · until 3:00 AM':'Closed now · opens at 8:00 AM'})}
+ hrs();setInterval(hrs,60000);
+ /* cooking fire */
+ const cv=document.getElementById('fire');if(!cv)return;
+ const c=cv.getContext('2d'),reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+ let w=2,h=2,ps=[],sp=[],t=0,run=true,raf=0;
+ function rs(){const r=cv.getBoundingClientRect();w=cv.width=Math.max(2,r.width/2|0);h=cv.height=Math.max(2,r.height/2|0)}
+ rs();addEventListener('resize',rs);
+ const spr=[];for(let i=0;i<28;i++){const k=i/27,o=document.createElement('canvas');o.width=o.height=64;const x=o.getContext('2d'),hue=44-k*40,l=56-k*14;
+  const g=x.createRadialGradient(32,32,0,32,32,32);g.addColorStop(0,'hsla('+hue+',100%,'+(l+6)+'%,1)');g.addColorStop(.4,'hsla('+hue+',100%,'+l+'%,.55)');g.addColorStop(1,'hsla('+(hue-8)+',100%,40%,0)');
+  x.fillStyle=g;x.fillRect(0,0,64,64);spr.push(o)}
+ function spawn(n){for(let i=0;i<n;i++){const cx=w*(.5+(Math.random()+Math.random()+Math.random()-1.5)*.62);
+  ps.push({x:cx,y:h+8,vx:(Math.random()-.5)*.5,vy:-(1.4+Math.random()*2.2),r:(16+Math.random()*30)*Math.max(.6,Math.min(1.5,w/520)),l:0,m:46+Math.random()*44,ph:Math.random()*6.28})}
+  if(Math.random()<.5)sp.push({x:w*(.2+Math.random()*.6),y:h,vx:(Math.random()-.5)*1.2,vy:-(2+Math.random()*3.5),l:0,m:60+Math.random()*60})}
+ function frame(){
+  t++;const ig=reduce?1:Math.min(1,Math.max(0,(t-50)/150));
+  c.clearRect(0,0,w,h);spawn(Math.round(8*ig));
+  c.globalCompositeOperation='lighter';
+  for(let i=ps.length-1;i>=0;i--){const p=ps[i];p.l++;if(p.l>p.m){ps.splice(i,1);continue}
+   const k=p.l/p.m;p.x+=p.vx+Math.sin(t*.06+p.ph)*.55;p.y+=p.vy;p.vy*=.992;
+   const r=p.r*(1-k*.72),a=(k<.12?k/.12:1-(k-.12)/.88)*.5;
+   c.globalAlpha=a;const s=spr[Math.min(27,(k*27)|0)];c.drawImage(s,p.x-r,p.y-r,r*2,r*2)}
+  c.globalAlpha=1;
+  for(let i=sp.length-1;i>=0;i--){const q=sp[i];q.l++;if(q.l>q.m||q.y<0){sp.splice(i,1);continue}
+   q.x+=q.vx+Math.sin(t*.1+i)*.5;q.y+=q.vy;const a=1-q.l/q.m;c.fillStyle='rgba(255,'+(170+a*70|0)+',80,'+a+')';c.fillRect(q.x,q.y,2,2)}
+  c.globalCompositeOperation='source-over';
+ }
+ function loop(){if(!run)return;frame();raf=requestAnimationFrame(loop)}
+ if(reduce){for(let i=0;i<200;i++)frame()}else{
+  new IntersectionObserver(e=>{const v=e[0].isIntersecting;if(v&&!run){run=true;loop()}else if(!v){run=false;cancelAnimationFrame(raf)}}).observe(cv);loop()}
 })();
 </script>
 </body>
